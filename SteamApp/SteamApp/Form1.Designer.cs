@@ -37,8 +37,10 @@
             this.gameNameLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.gamesBox.SuspendLayout();
             this.gameBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // gamesBox
@@ -81,6 +83,7 @@
             // 
             // gameBox
             // 
+            this.gameBox.Controls.Add(this.logo);
             this.gameBox.Controls.Add(this.playtimeLbl);
             this.gameBox.Controls.Add(this.gameNameLbl);
             this.gameBox.Controls.Add(this.label3);
@@ -127,6 +130,14 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
+            // logo
+            // 
+            this.logo.Location = new System.Drawing.Point(10, 56);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(184, 69);
+            this.logo.TabIndex = 4;
+            this.logo.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +151,7 @@
             this.gamesBox.PerformLayout();
             this.gameBox.ResumeLayout(false);
             this.gameBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -155,6 +167,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label gameNameLbl;
         private System.Windows.Forms.Label playtimeLbl;
+        private System.Windows.Forms.PictureBox logo;
     }
 }
 

@@ -70,6 +70,7 @@ namespace SteamApp
         {
             gameNameLbl.Text = gamesList.SelectedItem.ToString();
             playtimeLbl.Text = ConvertPlayTime(ownedGames.GetPlaytime(gamesList.SelectedItem.ToString()));
+            logo.Load(ownedGames.GetLogoURL(gamesList.SelectedItem.ToString()));
         }
     }
 }

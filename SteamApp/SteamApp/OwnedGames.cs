@@ -74,5 +74,42 @@ namespace SteamApp
             }
             return null;
         }
+
+        public string GetLogoURL(string game)
+        {
+            bool rightGame = false;
+            string appID = "";
+            string logoID = "";
+            foreach (XmlNode gamesNode in xml.DocumentElement.ChildNodes)
+            {
+                if (gamesNode.Name == "games")
+                {
+                    foreach (XmlNode messageNode in gamesNode.ChildNodes)
+                    {
+                        foreach (XmlNode gameNode in messageNode)
+                        {
+                            if (gameNode.Name == "appid")
+                            {
+                                appID = gameNode.InnerText;
+                            }
+                            else if (gameNode.Name == "name")
+                            {
+                                if (gameNode.InnerText.ToString() == game)
+                                {
+                                    rightGame = true;
+                                }
+                            }
+                            else if (gameNode.Name == "img_logo_url" && rightGame)
+                            {
+                                logoID = gameNode.InnerText;
+                                return "http://media.steampowered.com/steamcommunity/public/images/apps/"
+                                    + appID + "/" + logoID + ".jpg";
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
     }
 }
