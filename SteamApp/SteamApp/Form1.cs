@@ -18,6 +18,7 @@ namespace SteamApp
         private string user;
         private ArrayList games;
         private OwnedGames ownedGames;
+        private PlayerInfo playerInfo;
 
         public Form1(string user, string api, string id)
         {
@@ -26,7 +27,9 @@ namespace SteamApp
             steamID = id;
             this.user = user;
             ownedGames = new OwnedGames(key, steamID);
+            playerInfo = new PlayerInfo();
             ShowGamesList();
+            ShowUserInfo();
         }
 
         private void ShowGamesList()
@@ -38,6 +41,12 @@ namespace SteamApp
             {
                 gamesList.Items.Add(game);
             }
+        }
+
+        private void ShowUserInfo()
+        {
+            avatarBox.Load(playerInfo.GetAvatarUrl(key, steamID));
+            userLbl.Text = user;
         }
 
         private void SearchGamesList(string searchString)

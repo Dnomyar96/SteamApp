@@ -33,14 +33,19 @@
             this.searchBox = new System.Windows.Forms.TextBox();
             this.gamesList = new System.Windows.Forms.ListBox();
             this.gameBox = new System.Windows.Forms.GroupBox();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.playtimeLbl = new System.Windows.Forms.Label();
             this.gameNameLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.logo = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.avatarBox = new System.Windows.Forms.PictureBox();
+            this.userLbl = new System.Windows.Forms.Label();
             this.gamesBox.SuspendLayout();
             this.gameBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarBox)).BeginInit();
             this.SuspendLayout();
             // 
             // gamesBox
@@ -48,7 +53,7 @@
             this.gamesBox.Controls.Add(this.label1);
             this.gamesBox.Controls.Add(this.searchBox);
             this.gamesBox.Controls.Add(this.gamesList);
-            this.gamesBox.Location = new System.Drawing.Point(13, 13);
+            this.gamesBox.Location = new System.Drawing.Point(124, 12);
             this.gamesBox.Name = "gamesBox";
             this.gamesBox.Size = new System.Drawing.Size(370, 263);
             this.gamesBox.TabIndex = 0;
@@ -88,12 +93,20 @@
             this.gameBox.Controls.Add(this.gameNameLbl);
             this.gameBox.Controls.Add(this.label3);
             this.gameBox.Controls.Add(this.label2);
-            this.gameBox.Location = new System.Drawing.Point(390, 13);
+            this.gameBox.Location = new System.Drawing.Point(501, 12);
             this.gameBox.Name = "gameBox";
-            this.gameBox.Size = new System.Drawing.Size(295, 258);
+            this.gameBox.Size = new System.Drawing.Size(295, 263);
             this.gameBox.TabIndex = 1;
             this.gameBox.TabStop = false;
             this.gameBox.Text = "Game";
+            // 
+            // logo
+            // 
+            this.logo.Location = new System.Drawing.Point(10, 56);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(184, 69);
+            this.logo.TabIndex = 4;
+            this.logo.TabStop = false;
             // 
             // playtimeLbl
             // 
@@ -130,19 +143,43 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
-            // logo
+            // groupBox1
             // 
-            this.logo.Location = new System.Drawing.Point(10, 56);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(184, 69);
-            this.logo.TabIndex = 4;
-            this.logo.TabStop = false;
+            this.groupBox1.Controls.Add(this.userLbl);
+            this.groupBox1.Controls.Add(this.avatarBox);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(106, 263);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "User";
+            // 
+            // avatarBox
+            // 
+            this.avatarBox.Location = new System.Drawing.Point(7, 20);
+            this.avatarBox.MaximumSize = new System.Drawing.Size(64, 64);
+            this.avatarBox.MinimumSize = new System.Drawing.Size(64, 64);
+            this.avatarBox.Name = "avatarBox";
+            this.avatarBox.Size = new System.Drawing.Size(64, 64);
+            this.avatarBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.avatarBox.TabIndex = 0;
+            this.avatarBox.TabStop = false;
+            // 
+            // userLbl
+            // 
+            this.userLbl.AutoSize = true;
+            this.userLbl.Location = new System.Drawing.Point(4, 87);
+            this.userLbl.Name = "userLbl";
+            this.userLbl.Size = new System.Drawing.Size(35, 13);
+            this.userLbl.TabIndex = 1;
+            this.userLbl.Text = "[User]";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 288);
+            this.ClientSize = new System.Drawing.Size(805, 283);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gameBox);
             this.Controls.Add(this.gamesBox);
             this.Name = "Form1";
@@ -152,6 +189,9 @@
             this.gameBox.ResumeLayout(false);
             this.gameBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,6 +208,9 @@
         private System.Windows.Forms.Label gameNameLbl;
         private System.Windows.Forms.Label playtimeLbl;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label userLbl;
+        private System.Windows.Forms.PictureBox avatarBox;
     }
 }
 

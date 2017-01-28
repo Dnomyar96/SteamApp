@@ -16,7 +16,7 @@ namespace SteamApp
             xml = new XmlDocument();
         }
 
-        public string GetPlayerName(string api, string id)
+        private void LoadXml(string api, string id)
         {
             try
             {
@@ -27,6 +27,11 @@ namespace SteamApp
             {
                 MessageBox.Show("Can't connect to the Steam servers. Please check your connection.");
             }
+        }
+
+        public string GetPlayerName(string api, string id)
+        {
+            LoadXml(api, id);
 
             string name = "";
             foreach (XmlNode playersNode in xml.DocumentElement.ChildNodes)
@@ -46,6 +51,30 @@ namespace SteamApp
                 }
             }
             return name;
+        }
+
+        public string GetAvatarUrl(string api, string id)
+        {
+            LoadXml(api, id);
+
+            string url = "";
+            foreach (XmlNode playersNode in xml.DocumentElement.ChildNodes)
+            {
+                if (playersNode.Name == "players")
+                {
+                    foreach (XmlNode playerNode in playersNode.ChildNodes)
+                    {
+                        foreach (XmlNode avatarNode in playerNode)
+                        {
+                            if (avatarNode.Name == "avatarmedium")
+                            {
+                                url = avatarNode.InnerText;
+                            }
+                        }
+                    }
+                }
+            }
+            return url;
         }
     }
 }
