@@ -20,8 +20,15 @@ namespace SteamApp
             this.key = key;
             this.steamID = steamID;
             xml = new XmlDocument();
-            xml.Load("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=" 
+            try
+            {
+                xml.Load("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key="
                 + key + "&steamid=" + this.steamID + "&include_appinfo=1&format=xml");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Can't connect to the Steam servers. Please check your connection.");
+            }
         }
 
         public ArrayList getOwnedGames()
