@@ -39,13 +39,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.avatarBox = new System.Windows.Forms.PictureBox();
             this.userLbl = new System.Windows.Forms.Label();
+            this.avatarBox = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.compareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.singleGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listOfGamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gamesBox.SuspendLayout();
             this.gameBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarBox)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gamesBox
@@ -53,7 +60,7 @@
             this.gamesBox.Controls.Add(this.label1);
             this.gamesBox.Controls.Add(this.searchBox);
             this.gamesBox.Controls.Add(this.gamesList);
-            this.gamesBox.Location = new System.Drawing.Point(124, 12);
+            this.gamesBox.Location = new System.Drawing.Point(124, 27);
             this.gamesBox.Name = "gamesBox";
             this.gamesBox.Size = new System.Drawing.Size(370, 263);
             this.gamesBox.TabIndex = 0;
@@ -93,7 +100,7 @@
             this.gameBox.Controls.Add(this.gameNameLbl);
             this.gameBox.Controls.Add(this.label3);
             this.gameBox.Controls.Add(this.label2);
-            this.gameBox.Location = new System.Drawing.Point(501, 12);
+            this.gameBox.Location = new System.Drawing.Point(501, 27);
             this.gameBox.Name = "gameBox";
             this.gameBox.Size = new System.Drawing.Size(295, 263);
             this.gameBox.TabIndex = 1;
@@ -147,12 +154,21 @@
             // 
             this.groupBox1.Controls.Add(this.userLbl);
             this.groupBox1.Controls.Add(this.avatarBox);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(106, 263);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User";
+            // 
+            // userLbl
+            // 
+            this.userLbl.AutoSize = true;
+            this.userLbl.Location = new System.Drawing.Point(4, 87);
+            this.userLbl.Name = "userLbl";
+            this.userLbl.Size = new System.Drawing.Size(35, 13);
+            this.userLbl.TabIndex = 1;
+            this.userLbl.Text = "[User]";
             // 
             // avatarBox
             // 
@@ -165,23 +181,61 @@
             this.avatarBox.TabIndex = 0;
             this.avatarBox.TabStop = false;
             // 
-            // userLbl
+            // menuStrip1
             // 
-            this.userLbl.AutoSize = true;
-            this.userLbl.Location = new System.Drawing.Point(4, 87);
-            this.userLbl.Name = "userLbl";
-            this.userLbl.Size = new System.Drawing.Size(35, 13);
-            this.userLbl.TabIndex = 1;
-            this.userLbl.Text = "[User]";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gesToolStripMenuItem,
+            this.compareToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(805, 24);
+            this.menuStrip1.TabIndex = 3;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // gesToolStripMenuItem
+            // 
+            this.gesToolStripMenuItem.Name = "gesToolStripMenuItem";
+            this.gesToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.gesToolStripMenuItem.Text = "File";
+            // 
+            // compareToolStripMenuItem
+            // 
+            this.compareToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.singleGameToolStripMenuItem,
+            this.listOfGamesToolStripMenuItem,
+            this.textFileToolStripMenuItem});
+            this.compareToolStripMenuItem.Name = "compareToolStripMenuItem";
+            this.compareToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.compareToolStripMenuItem.Text = "Compare";
+            // 
+            // singleGameToolStripMenuItem
+            // 
+            this.singleGameToolStripMenuItem.Name = "singleGameToolStripMenuItem";
+            this.singleGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.singleGameToolStripMenuItem.Text = "Single game";
+            // 
+            // listOfGamesToolStripMenuItem
+            // 
+            this.listOfGamesToolStripMenuItem.Name = "listOfGamesToolStripMenuItem";
+            this.listOfGamesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listOfGamesToolStripMenuItem.Text = "List of games";
+            // 
+            // textFileToolStripMenuItem
+            // 
+            this.textFileToolStripMenuItem.Name = "textFileToolStripMenuItem";
+            this.textFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.textFileToolStripMenuItem.Text = "Text file";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 283);
+            this.ClientSize = new System.Drawing.Size(805, 300);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gameBox);
             this.Controls.Add(this.gamesBox);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
             this.gamesBox.ResumeLayout(false);
@@ -192,7 +246,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.avatarBox)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -211,6 +268,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label userLbl;
         private System.Windows.Forms.PictureBox avatarBox;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem gesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem compareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem singleGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listOfGamesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem textFileToolStripMenuItem;
     }
 }
 

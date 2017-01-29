@@ -30,6 +30,7 @@ namespace SteamApp
 
         private void ShowUsers()
         {
+            userBox.Items.Clear();
             foreach (string user in users)
             {
                 string api = user.Substring(0, user.IndexOf(";"));
@@ -69,7 +70,8 @@ namespace SteamApp
                 string id = "";
                 api = apiText.Text;
                 id = idText.Text;
-                reader.SaveUser(api, id);
+                while (reader.SaveUser(api, id) != true) ;
+                ShowUsers();
             }
         }
     }

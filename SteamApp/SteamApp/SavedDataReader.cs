@@ -21,20 +21,26 @@ namespace SteamApp
         public ArrayList GetUsers()
         {
             ArrayList users = new ArrayList();
-            using (StreamReader sr = new StreamReader(path))
+            try
             {
-                string s = "";
-                while ((s = sr.ReadLine()) != null)
+                using (StreamReader sr = new StreamReader(path))
                 {
-                    users.Add(s);
+                    string s = "";
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        users.Add(s);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                
             }
             return users;
         }
 
-        public void SaveUser(string api, string id)
+        public bool SaveUser(string api, string id)
         {
-            MessageBox.Show("SaveUser(" + api + ", " + id + ")");
             if (!File.Exists(path))
             {
                 using (StreamWriter sw = File.CreateText(path))
@@ -49,6 +55,7 @@ namespace SteamApp
                     sw.WriteLine(api + ";" + id);
                 }
             }
+            return true;
         }
     }
 }

@@ -19,13 +19,15 @@ namespace SteamApp
         private ArrayList games;
         private OwnedGames ownedGames;
         private PlayerInfo playerInfo;
+        private SelectUser application;
 
-        public Form1(string user, string api, string id)
+        public Form1(string user, string api, string id, SelectUser application)
         {
             InitializeComponent();
             key = api;
             steamID = id;
             this.user = user;
+            this.application = application;
             ownedGames = new OwnedGames(key, steamID);
             playerInfo = new PlayerInfo();
             ShowGamesList();
