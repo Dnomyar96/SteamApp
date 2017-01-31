@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompareSingleGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompareSingleGame.Designer.cs">
+      <DependentUpon>CompareSingleGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="SelectUser.Designer.cs">
       <DependentUpon>SelectUser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CompareSingleGame.resx">
+      <DependentUpon>CompareSingleGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

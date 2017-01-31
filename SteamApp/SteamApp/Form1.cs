@@ -27,9 +27,9 @@ namespace SteamApp
             key = api;
             steamID = id;
             this.user = user;
-            this.application = application;
             ownedGames = new OwnedGames(key, steamID);
             playerInfo = new PlayerInfo();
+            this.application = application;
             ShowGamesList();
             ShowUserInfo();
         }
@@ -84,6 +84,35 @@ namespace SteamApp
             gameNameLbl.Text = gamesList.SelectedItem.ToString();
             playtimeLbl.Text = ConvertPlayTime(ownedGames.GetPlaytime(gamesList.SelectedItem.ToString()));
             logo.Load(ownedGames.GetLogoURL(gamesList.SelectedItem.ToString()));
+        }
+
+        private void singleGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompareSingleGame compare = new CompareSingleGame(this);
+            compare.Show();
+        }
+
+        public void CompareSingleGame(string gameToCompare)
+        {
+            bool owned = false;
+            foreach (string game in gamesList.Items)
+            {
+                if (gameToCompare == game)
+                {
+                    MessageBox.Show("You own this game.");
+                    owned = true;
+                }
+            }
+
+            if (!owned)
+            {
+                MessageBox.Show("You don't own this game yet.");
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            application.Close();
         }
     }
 }

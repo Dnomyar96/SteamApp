@@ -48,7 +48,7 @@ namespace SteamApp
                 string apiId = players[userBox.SelectedItem.ToString()];
                 string selectedUserApi = apiId.Substring(0, apiId.IndexOf(";"));
                 string selectedUserId = apiId.Substring(apiId.IndexOf(";") + 1);
-                Form1 main = new Form1(selectedUser, selectedUserApi, selectedUserId);
+                Form1 main = new Form1(selectedUser, selectedUserApi, selectedUserId, this);
                 main.Show();
                 this.Hide();
             }

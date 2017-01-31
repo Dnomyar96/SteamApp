@@ -213,6 +213,7 @@
             this.singleGameToolStripMenuItem.Name = "singleGameToolStripMenuItem";
             this.singleGameToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.singleGameToolStripMenuItem.Text = "Single game";
+            this.singleGameToolStripMenuItem.Click += new System.EventHandler(this.singleGameToolStripMenuItem_Click);
             // 
             // listOfGamesToolStripMenuItem
             // 
@@ -237,7 +238,9 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.gamesBox.ResumeLayout(false);
             this.gamesBox.PerformLayout();
             this.gameBox.ResumeLayout(false);
